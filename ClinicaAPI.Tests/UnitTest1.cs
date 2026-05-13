@@ -61,6 +61,16 @@ namespace ClinicaAPI.Tests
         }
 
         [Fact]
+        public void Paciente_Correo_Debe_Contener_Arroba()
+        {
+            var paciente = new Paciente
+            {
+                CorreoElectronico = "test@correo.com"
+            };
+
+            Assert.Contains("@", paciente.CorreoElectronico);
+        }
+        [Fact]
         public void Paciente_Nombre_No_Debe_Ser_Vacio()
         {
             var paciente = new Paciente
